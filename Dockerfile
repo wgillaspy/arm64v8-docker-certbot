@@ -1,4 +1,4 @@
 FROM arm64v8/alpine:latest
 
-RUN apk get certbot
+RUN apk add certbot
 
