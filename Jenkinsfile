@@ -12,7 +12,7 @@ pipeline {
        sh "/usr/local/bin/dockerd-entrypoint.sh &"
        sh "sleep 30"
 
-        withCredentials([usernamePassword(credentialsId: 'docker-login', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
+        withCredentials([usernamePassword(credentialsId: 'docker-io-login', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
           sh "echo $PASS | docker login --username $USER --password-stdin"
         }
       }
