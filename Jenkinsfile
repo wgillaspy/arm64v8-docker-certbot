@@ -5,7 +5,12 @@ pipeline {
  triggers {
        pollSCM('H 5 * * 1')
  }
+ environment {
+        DOCKER_HOST = ""
+        DOCKER_TLS_VERIFY = ""
+ }
  stages {
+
 
     stage('Build image') {
       steps {
